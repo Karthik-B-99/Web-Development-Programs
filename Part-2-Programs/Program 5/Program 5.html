@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ol.a{
+	list-style-position: outside;
+	list-style-type: upper-roman;
+	line-height: 100%;
+	font-size: 20px;
+	margin-left: 40px;
+	font-weight: bold;
+	}
+div.a{
+	border: 1px solid;
+	}
+ol.b{
+	list-style-type: lower-alpha;
+	line-height: 120%;
+   }
+li{
+	display: inline block;
+	}
+div.li{
+	margin-left: 2em;
+	}
+div.lia{
+	list-style-position: inside;
+	margin-left: 10px;
+	}
+</style>
+</head>
+
+<body>
+<div class="a">
+<h1 style="font-size: 40px; font-family: 'Roboto', sans-serif;"><b>The ol type attribute</b></h1>
+<ol class="b"><li> 
+	<ol class="a">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ol>
+</ol>
+</div>
+
+<ol class="b" start="2"><li> 
+	<ol start="50">
+		<div class="li">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Milk</li>
+		</div>
+	</ol>		
+</ol>
+
+<ol class="b" start="3"><li> 
+	<ol type="I" start="6">
+		<div class="lia">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Milk</li>
+		</div>
+	</ol>		
+</ol>
+
+<ol class="b" start="4"><li> 
+	<ol type="i" start="6">
+		<div class="lia">
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Milk</li>
+		</div>
+	</ol>		
+</ol>
+</body>
+</html>

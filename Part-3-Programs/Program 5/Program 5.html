@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>MAC Address Validation</title>
+	<style type = "text/css">
+		section{
+			width: 500px;
+			height: 300px;
+			margin: 100px auto;
+		}
+		
+		div{
+			width: 100%;
+			margin: 15px auto;
+		}
+		
+		label{
+			display: block;
+			padding: 20px;
+			font-size: 25px;
+		}
+		
+		input{
+			width: 96%;
+			padding: 10px;
+			border: 1px solid #797979;
+			margin-left: 20px;
+			font-size: 20px;
+			border-radius: 3px;
+		}
+		
+		span{
+			display: block;
+			margin-left: 20px;
+			color: red;
+			font-style: italic;
+		}
+	</style>
+			
+</head>
+
+<body>
+	<section>
+		<form action = "">
+			<div>
+				<label for = "macaddress">Mac Address</label>
+				<input type = "macaddress" id = "macaddress" placeholder = "please enter the mac-address">
+				<span></span>
+			</div>
+		</form>
+	</section>
+</body>
+<html>
+
+<script type = "text/javascript">
+	let macaddress = document.getElementById('macaddress');
+	let span = document.getElementsByTagName('span');
+	
+	macaddress.onkeydown = function(){
+		const regexm = /^([0-9a-fA-F]{2}[:.-]?){5}[0-9a-fA-F]{2}$/;
+		if(regexm.test(macaddress.value))
+		{
+			span[0].innerText = "MAC Address is valid";
+			span[0].style.color = 'lime';
+		}
+		else
+		{
+			span[0].innerText = "MAC Address is invalid";
+			span[0].style.color = 'red';
+		}
+	}
+</script>

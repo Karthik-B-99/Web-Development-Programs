@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8/>
+	<title>Age Validation & Counting Words</title>
+	
+<style type="text/css">
+body{
+	background-image: url('word.png');
+	background-position: center;
+	background-size: cover;
+	margin-top: 100px;
+	margin-left: 450px;
+}
+</style> 
+</head>
+
+<body>
+	<h1>Age Validation</h1>
+	Enter your age: <input type = "text" id = "age" onblur = "fun()"><br><br>
+	<h1>Counting the Number of Words</h1>
+	<textarea id="inputtext" cols="40" rows="1"></textarea><br><br>
+	<input type="button" name="Convert" value="No. of Words" onClick="countWords();"><br><br>
+	<input id = "words" type="text" value="" size="6"> 
+</body>
+</html>
+  
+<script type = "text/javascript">
+function fun()
+	{
+		var a = document.getElementById("age");
+		if(a.value <= 18)
+			{
+				alert("Age must be above 18");
+				return false;
+			}
+	}
+	
+function countWords()
+	{
+		str1= document.getElementById("inputtext").value;
+		str1 = str1.replace(/(^\s*)|(\s*$)/gi,"");				
+		str1 = str1.replace(/[ ]{2,}/gi," ");
+		str1 = str1.replace(/\n /,"\n");
+		document.getElementById("words").value = str1.split(' ').length;
+}
+</script>

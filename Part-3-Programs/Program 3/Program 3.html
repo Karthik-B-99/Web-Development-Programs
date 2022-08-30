@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+	<meta name = "viewport" content = "width = device - width, initial-scale = 1.0">
+	<title>LineRotation</title>
+
+<style type = "text/css">
+body{
+	margin-top: 50px;
+	margin-left: 100px;
+</style>
+
+<script>
+	var looper;
+	var degrees = 0;
+	speed = 200;
+
+	function faster()
+		{
+			speed = speed - 50;
+			rotateAnimation(e1);
+		}
+		
+	function slower()
+		{
+			speed = speed + 50;
+			rotateAnimation(e1);
+		}
+		
+		function rotateAnimation(e1)
+			{
+				var e = document.getElementById(e1);
+				e.style.transform = "rotate(" + degrees + "deg)";
+				looper = setTimeout('rotateAnimation(\'' + e1 + '\',' + speed + ')', speed);
+				degrees++;
+				if(degrees > 359)
+					{
+						degree = 1;
+					}
+			}
+</script>
+</head>
+
+
+<body>
+	<img src = "line.png" alt = "line" id = "line" style = "height: 100px;">
+		<script>
+			rotateAnimation("line");
+		</script>
+		<br><br><button type = "button" name = "fast" id = "fast" onclick = "faster()" style =" font-size: 25px;">Rotate Faster!</button><br><br><br>
+		<button type = "button" name = "slow" id = "slow" onclick = "slower()" style =" font-size: 25px;">Rotate Slower!</button>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+	<meta name = "viewport" content = "width = device - width, initial-scale = 1.0">
+	<title>StudentForm</title>
+
+<style = "text/css">
+label{
+	display: inline-block;
+	width: 140px;
+	text-align: center;
+	}
+
+body{
+	background-image: url('plain.jpg');
+	background-position: center;
+	background-size: cover;
+	margin-top: 100px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+</style>
+	
+<script>
+function validate()
+	{
+		let x = document.getElementById("rollno").value;
+		var num = /^[0-9]+$/;
+		if(!x.match(num))
+			alert("The roll no. must be of numeric value!");
+		else if(x.toString().length!=7)
+			alert("The roll no. must be of size 7!");
+		else
+			alert("Valid roll no.!");
+	}
+</script>
+</head>
+
+<body style = "text-align: center;">
+<h2>Student Registration Form</h2>
+<form action = "">
+<div class = "label">
+	<label for = "name">Enter your name : </label>
+	<input type = "text" name = "name" id = "name" placeholder = "enter your name here"><br><br>
+</div>
+
+<div class = "label">
+	<label for = "rollno">Enter your roll no : </label>
+	<input type = "text" name = "rollno" id = "rollno" placeholder = "enter your roll no. here"><br><br><br>
+</div>
+
+	<h4>Enter the courses you have enrolled</h4>
+	<textarea id="inputtext" cols="40" rows="1"></textarea><br><br>
+
+
+	<input type = "submit" onclick = "validate()" placeholder = "Submit">
+</form>
+</body>
+</html>
+	
