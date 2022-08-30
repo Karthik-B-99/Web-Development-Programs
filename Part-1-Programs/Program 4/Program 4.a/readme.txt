@@ -1,0 +1,3 @@
+Q. JavaScript code that displays text "TEXT GROWING" with increasing font size in the interval of 1000ms
+   in red color. When the font size reaches 50pt, it displays "TEXT SHRINKING" in blue color.
+   Then the font size decreases to 5pt.
